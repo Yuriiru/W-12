@@ -12,7 +12,7 @@
         }
 
         public event EventDelegate Event; // определение события
-        public void RaiseMyEvent() // с помощью метода + (вызов события), да?
+        public void RaiseMyEvent() // с помощью метода + (вызов события), да? - генерация обработчика -?
         {
             if (Event != null)
             {
@@ -28,10 +28,10 @@ class KakoyToClass
         {
             text = metodtext;
         }
-        public void show(string objname) // метод + что тут??
+        public void show(string objname) // метод консоль выводит название обекта, 
         {
             Console.WriteLine("Объект, сгенерировавший событие: " + objname);
-            Console.WriteLine("Сообщение: " + text);
+            Console.WriteLine("Сообщение: " + text); // сообщение-строка-параметр
         }
 }
 
@@ -44,7 +44,7 @@ class Program
 
             KakoyToClass KakoyToClassObject = new KakoyToClass("KakoyToClassObject"); // создание объекта второго класса
 
-            kakoyToOdject1.Event += KakoyToClassObject.show; // что тут происходит с этого моменнта и тд ??
+            kakoyToOdject1.Event += KakoyToClassObject.show; // методо добавлется в делегат через собтие
             kakoyToOdject2.Event += KakoyToClassObject.show;
 
             kakoyToOdject1.RaiseMyEvent();
