@@ -4,7 +4,7 @@
     {
         private string name; // создание переменной
 
-        public delegate void EventDelegate(string txt); // создание делегата +
+        public delegate void EventDelegate(string txt); // создание делегата + (для чего txt?)
 
         public EventDelegateClass(string name) // конструктор класса
         {
@@ -12,7 +12,7 @@
         }
 
         public event EventDelegate Event; // определение события
-        public void RaiseMyEvent() // с помощью метода + (вызов события)
+        public void RaiseMyEvent() // с помощью метода + (вызов события), да?
         {
             if (Event != null)
             {
@@ -28,7 +28,7 @@ class KakoyToClass
         {
             text = metodtext;
         }
-        public void show(string objname) // метод +
+        public void show(string objname) // метод + что тут??
         {
             Console.WriteLine("Объект, сгенерировавший событие: " + objname);
             Console.WriteLine("Сообщение: " + text);
@@ -44,7 +44,7 @@ class Program
 
             KakoyToClass KakoyToClassObject = new KakoyToClass("KakoyToClassObject"); // создание объекта второго класса
 
-            kakoyToOdject1.Event += KakoyToClassObject.show;
+            kakoyToOdject1.Event += KakoyToClassObject.show; // что тут происходит с этого моменнта и тд ??
             kakoyToOdject2.Event += KakoyToClassObject.show;
 
             kakoyToOdject1.RaiseMyEvent();
